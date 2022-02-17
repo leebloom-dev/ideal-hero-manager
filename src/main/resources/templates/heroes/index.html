@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<!-- Navigation -->
+<header th:replace="fragments :: header"></header>
+
+<!-- Data Table -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <!-- for each object hero in an ArrayList of object heroes -->
+    <tr th:each="hero : ${heroes}">
+        <!-- get the value of name from object hero to be filled in as text -->
+        <td th:text="${hero.name}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
