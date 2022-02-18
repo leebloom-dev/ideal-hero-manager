@@ -37,8 +37,29 @@ public class HeroesController {
     // Process the form after the user inputs a value.
     // user input --> controller --> value passes in object constructor --> added to ArrayList
     @PostMapping("create")
-    public String processCreateHeroForm(@RequestParam String heroName) {
-        heroes.add(new Heroes(heroName));
+    public String processCreateHeroForm(@RequestParam String heroName,
+                                        @RequestParam int heroLevel,
+                                        @RequestParam int heroAtk,
+                                        @RequestParam int heroHp,
+                                        @RequestParam int heroDef,
+                                        @RequestParam int heroCritHitChance,
+                                        @RequestParam int heroCritHitDamage,
+                                        @RequestParam int heroDualAttack,
+                                        @RequestParam int heroEffectiveness,
+                                        @RequestParam int heroEffectResist,
+                                        @RequestParam int heroSpeed) {
+        heroes.add(new Heroes(
+                heroName,
+                heroLevel,
+                heroAtk,
+                heroHp,
+                heroDef,
+                heroCritHitChance,
+                heroCritHitDamage,
+                heroDualAttack,
+                heroEffectiveness,
+                heroEffectResist,
+                heroSpeed));
         return "redirect:";
     }
 

@@ -10,13 +10,35 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
+            <th>Level</th>
+            <th>Atk</th>
+            <th>HP</th>
+            <th>Def</th>
+            <th>Critical Hit Chance</th>
+            <th>Critical Hit Damage</th>
+            <th>Dual Attack Chance</th>
+            <th>Effectiveness</th>
+            <th>Effect Resistance</th>
+            <th>Speed</th>
         </tr>
     </thead>
     <!-- for each object hero in an ArrayList of object heroes -->
     <tr th:each="hero : ${heroes}">
+        <td th:text="${hero.id}"></td>
         <!-- get the value of name from object hero to be filled in as text -->
         <td th:text="${hero.name}"></td>
+        <td th:text="${hero.level}"></td>
+        <td th:text="${hero.attack}"></td>
+        <td th:text="${hero.health}"></td>
+        <td th:text="${hero.defense}"></td>
+        <td th:text="${hero.critHitChance}+'%'"></td>
+        <td th:text="${hero.critHitDamage}+'%'"></td>
+        <td th:text="${hero.dualAttack}+'%'"></td>
+        <td th:text="${hero.effectiveness}+'%'"></td>
+        <td th:text="${hero.effectResist}+'%'"></td>
+        <td th:text="${hero.speed}"></td>
     </tr>
 </table>
 
